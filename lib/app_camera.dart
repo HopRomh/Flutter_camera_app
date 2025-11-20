@@ -14,6 +14,30 @@ class CameraApp extends StatefulWidget {
 class _CameraAppState extends State<CameraApp> {
   late CameraController controller;
 
+  void switchCamera() async {
+    if (cameras.length < 2) return;
+
+    int currentIndex = cameras.indexOf(controller.description);
+    int newIndex = (currentIndex + 1) % cameras.length;
+
+    await controller.dispose();
+
+    controller = CameraController(
+      cameras[newIndex],
+      ResolutionPreset.ultraHigh,
+      enableAudio: false,
+    );
+
+
+    await controller.initialize();
+
+    if (!mounted) return;
+
+    setState(() {});
+  }
+
+
+
   @override
   void initState() {
     super.initState();
@@ -47,10 +71,11 @@ class _CameraAppState extends State<CameraApp> {
         body: Stack(
           children: [
             CameraPreviewWidget(controller: controller),
-            ButtonsOverlay(controller: controller, refresh: () => setState(() {})),
+            ButtonsOverlay(onSwitch: switchCamera),
           ],
         ),
       ),
     );
   }
 }
+
