@@ -78,14 +78,17 @@ class _PhotoScreenState extends State<PhotoScreen> {
   }
 
 
-  void photoscupter() async{
-    if(controllerl.value.isInitialized){
-      return;
 
-    }
+  // void photoscupter() async{
+  //   if(controllerl.value.isInitialized){
+  //     return;
+
+  //   }
 
     
-  }
+  // }
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -165,7 +168,7 @@ class _PhotoScreenState extends State<PhotoScreen> {
                                 Expanded(
                                   child: GestureDetector(
                                     onTap: () {
-                                      photoscupter();
+                                      // photoscupter();
                                     },
                                     child: Center(
                                       child: Container(
@@ -222,5 +225,4 @@ class _PhotoScreenState extends State<PhotoScreen> {
     );
   }
 }
-
 
