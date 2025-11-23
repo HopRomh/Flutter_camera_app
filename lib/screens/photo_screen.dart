@@ -79,14 +79,14 @@ class _PhotoScreenState extends State<PhotoScreen> {
 
 
 
-  // void photoscupter() async{
-  //   if(controllerl.value.isInitialized){
-  //     return;
+  void commeentButton() async{
+    if(controllerl.value.isInitialized){
+      return;
 
-  //   }
+    }
 
     
-  // }
+  }
 
 
 
@@ -97,14 +97,14 @@ class _PhotoScreenState extends State<PhotoScreen> {
         builder: (BuildContext context, BoxConstraints constraints) {
           return Stack(
             children: [
-              // Camera preview на весь экран
+              
               Positioned.fill(
-                top: 50, // чтобы сверху была панель
-                bottom: 170, // чтобы снизу была панель
+                top: 50, 
+                bottom: 170,
                 child: CameraPreview(controllerl),
               ),
 
-              // Верхняя панель
+         
               Positioned(
                 top: 0,
                 left: 0,
@@ -124,7 +124,7 @@ class _PhotoScreenState extends State<PhotoScreen> {
                 ),
               ),
 
- // Нижняя панель
+
               Positioned(
                 left: 0,
                 right: 0,
@@ -155,7 +155,7 @@ class _PhotoScreenState extends State<PhotoScreen> {
                                 Expanded(
                                   child: GestureDetector(
                                     onTap: () {
-                                      // _commeentButton();
+                                      // commeentButton();
                                     },
                                     child: Icon(
                                       Icons.whatshot_sharp,
