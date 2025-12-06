@@ -140,6 +140,20 @@ class _PhotoScreenState extends State<PhotoScreen> {
     );
   }
 
+  void _FlashLight(){
+    if (_isFlash == false){
+      controllerl.setFlashMode(FlashMode.torch);
+      setState(() {
+        _isFlash = true;
+      });
+    } else {
+      controllerl.setFlashMode(FlashMode.off);
+      setState(() {
+        _isFlash = false;
+      });
+    }
+  }
+  
   Future<void> _capturePhoto() async {
     if (!controllerl.value.isInitialized || isCapturing) return;
 
@@ -339,8 +353,13 @@ class _PhotoScreenState extends State<PhotoScreen> {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       IconButton(
-                        icon: Icon(Icons.flash_off, color: Colors.white),
-                        onPressed: () {},
+                        icon: Icon(
+                          _isFlash ? Icons.flash_on : Icons.flash_off,
+                          color: Colors.white,
+                        ),
+                        onPressed: () {
+                          _FlashLight();
+                        },
                       ),
                     ],
                   ),
