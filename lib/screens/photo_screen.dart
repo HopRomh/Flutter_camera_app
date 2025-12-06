@@ -90,8 +90,6 @@ class _PhotoScreenState extends State<PhotoScreen> {
     }
   }
 
-
-
   void _showCommentDialog() {
     final TextEditingController commentController = TextEditingController();
     final BuildContext parentContext = context;
@@ -323,8 +321,6 @@ class _PhotoScreenState extends State<PhotoScreen> {
     });
   }
 
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -341,7 +337,6 @@ class _PhotoScreenState extends State<PhotoScreen> {
                 child: CameraPreview(controllerl),
               ),
 
-         
               Positioned(
                 top: 0,
                 left: 0,
@@ -365,7 +360,6 @@ class _PhotoScreenState extends State<PhotoScreen> {
                   ),
                 ),
               ),
-
 
               Positioned(
                 left: 0,
@@ -470,9 +464,7 @@ class _PhotoScreenState extends State<PhotoScreen> {
                   ),
                 ),
               ),
-
-
-            
+           
             if (_showPreviewOverlay)
               Positioned.fill(
                 child: Container(
